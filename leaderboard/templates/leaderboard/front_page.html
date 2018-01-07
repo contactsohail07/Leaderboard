@@ -1,0 +1,20 @@
+{% extends 'leaderboard/base.html' %}
+
+{% block content %}
+	<table class="table table-bordered table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in board %}
+        <tr class="info">
+            <td><a href="{% url 'link_page' pk=i.pk %}">{{ i.name }}</a></td>
+            <td><a href="{% url 'link_page' pk=i.pk %}">{{ i.score }}</a></td>  
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
